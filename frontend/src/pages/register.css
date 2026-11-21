@@ -1,94 +1,110 @@
-.register-container {
-  min-height: 100vh;
+/* Registration Page Specific Styles */
+@import './login.css';
+
+.register-card-wrapper {
+  max-width: 480px;
+}
+
+.role-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.role-choice-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-light, #e2e8f0);
+  border-radius: var(--radius-md, 10px);
+  padding: 0.875rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  transition: all 0.2s ease;
+}
+
+.role-choice-card:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.role-choice-card.selected {
+  border-color: var(--primary, #059669);
+  background-color: #ecfdf5;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
+}
+
+.role-choice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.role-icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--green-50);
-  padding: 20px;
 }
 
-.register-form {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid var(--green-100);
+.role-icon-circle.citizen {
+  background-color: #d1fae5;
+  color: #047857;
 }
 
-.register-form h2 {
-  color: #1a202c;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-size: 1.75rem;
+.role-icon-circle.head {
+  background-color: #fef3c7;
+  color: #b45309;
 }
 
-.input-group {
-  margin-bottom: 1.25rem;
+.role-check-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.input-group input,
-.input-group select {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--green-200);
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+.role-choice-card.selected .role-check-indicator {
+  border-color: var(--primary, #059669);
+  background-color: var(--primary, #059669);
 }
 
-.input-group input:focus,
-.input-group select:focus {
-  outline: none;
-  border-color: var(--green-400);
-  box-shadow: 0 0 0 3px var(--green-100);
+.role-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
 }
 
-.register-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: var(--green-500);
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
+.role-choice-body {
+  display: flex;
+  flex-direction: column;
 }
 
-.register-button:hover {
-  background-color: var(--green-600);
-  transform: translateY(-1px);
-}
-
-.register-button:active {
-  transform: translateY(0);
-}
-
-.error-message {
-  color: #dc2626;
+.role-title {
   font-size: 0.875rem;
-  margin-top: 0.5rem;
-  text-align: center;
+  font-weight: 700;
+  color: var(--text-heading, #0f172a);
 }
 
-.login-link {
-  margin-bottom: 10px;
-  font-size: 15px;
-  color: #333;
+.role-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary, #64748b);
+  line-height: 1.35;
+  margin-top: 0.15rem;
 }
 
-.login-link-text {
-  color: #007bff;
-  cursor: pointer;
-  text-decoration: none; /* Remove underline */
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.login-link-text:hover {
-  color: #0056b3;
+@media (max-width: 480px) {
+  .role-selector-grid {
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+  }
 }

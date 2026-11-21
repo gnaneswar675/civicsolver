@@ -11,7 +11,27 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
+// Root & Health check endpoints for Render deployments & monitoring
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    service: 'CivicSolver Backend API',
+    uptime: `${Math.floor(process.uptime())}s`,
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get('/api/health', (req, res) => {
+  const dbState = mongoose.connection.readyState;
+  const dbStatus = dbState === 1 ? 'connected' : (dbState === 2 ? 'connecting' : 'disconnected');
+  res.status(dbState === 1 ? 200 : 503).json({
+    status: dbState === 1 ? 'healthy' : 'degraded',
+    database: dbStatus,
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Application Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/problems', require('./routes/problemRoutes'));
 app.use('/api/upload', require('./routes/uploadRoutes'));

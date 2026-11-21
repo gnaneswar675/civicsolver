@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="civicShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle with refined emerald gradient -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#emeraldGrad)" />
+  <rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" stroke="#A7F3D0" stroke-width="1.2" stroke-opacity="0.6" />
+
+  <!-- Municipal Building Emblem in pure white with soft drop shadow -->
+  <g filter="url(#civicShadow)">
+    <!-- Roof / Pediment -->
+    <path d="M15 25.5 L32 14 L49 25.5 Z" fill="#FFFFFF" />
+    <rect x="15" y="26.5" width="34" height="2.5" rx="0.8" fill="#FFFFFF" />
+
+    <!-- Civic Columns -->
+    <rect x="18" y="30.5" width="4.5" height="15" rx="1" fill="#FFFFFF" />
+    <rect x="25.5" y="30.5" width="4.5" height="15" rx="1" fill="#FFFFFF" />
+    <rect x="34" y="30.5" width="4.5" height="15" rx="1" fill="#FFFFFF" />
+    <rect x="41.5" y="30.5" width="4.5" height="15" rx="1" fill="#FFFFFF" />
+
+    <!-- Foundation / Steps -->
+    <rect x="14" y="47" width="36" height="3" rx="1" fill="#FFFFFF" />
+  </g>
+
+  <!-- Solver Check Badge (Symbol of Resolution) -->
+  <g>
+    <circle cx="46" cy="46" r="10.5" fill="#047857" stroke="#FFFFFF" stroke-width="2.5" />
+    <path d="M41.5 46 L44.8 49.3 L51 42.5" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
