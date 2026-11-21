@@ -1,5 +1,5 @@
 const Problem = require('../models/problem');
-const cloudinary = require('../config/CloudinaryConfig');
+const cloudinary = require('../config/cloudinaryConfig');
 
 exports.createProblem = async (req, res) => {
     try {
