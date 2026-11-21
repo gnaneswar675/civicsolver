@@ -38,6 +38,29 @@ const Header = () => {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleLogout = () => {
     logout();
     setMobileMenuOpen(false);
@@ -233,8 +256,14 @@ const Header = () => {
 
       {/* Mobile Menu Overlay & Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-drawer">
-          <div className="mobile-menu-content">
+        <>
+          <div 
+            className="mobile-menu-backdrop" 
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div className="mobile-menu-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+            <div className="mobile-menu-content">
             {!isLoggedIn ? (
               <>
                 <button 
@@ -341,7 +370,8 @@ const Header = () => {
             )}
           </div>
         </div>
-      )}
+      </>
+    )}
     </header>
   );
 };

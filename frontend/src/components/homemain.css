@@ -26,3 +26,13 @@
 .recent-reports-section {
   padding: 4rem 0;
 }
+
+@media (max-width: 640px) {
+  .home-main {
+    padding-top: 64px;
+  }
+
+  .recent-reports-section {
+    padding: 2.5rem 0;
+  }
+}

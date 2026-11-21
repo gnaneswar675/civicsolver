@@ -1070,8 +1070,21 @@
     gap: 2.5rem;
   }
 
+  .hero-text-content {
+    max-width: 100%;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
   .hero-visual-container {
-    order: -1;
+    width: 100%;
+  }
+
+  .hero-card-preview {
+    max-width: 520px;
+    margin: 0 auto;
   }
 
   .hero-metrics-grid {
@@ -1089,8 +1102,36 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 95px 0 45px;
+  }
+
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+  }
+
+  .hero-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.875rem;
+  }
+
+  .hero-action-buttons .btn {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .hero-trust-bar {
+    gap: 1rem;
+  }
+
+  .section-title-block {
+    margin-bottom: 2.25rem;
   }
 
   .section-heading {
@@ -1122,6 +1163,7 @@
   .active-issues-cta-left {
     flex-direction: row;
     gap: 1rem;
+    align-items: flex-start;
   }
 
   .active-issues-cta-banner .cta-banner-btn {
@@ -1132,25 +1174,39 @@
   .steps-connected-timeline {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
+  }
+
+  .timeline-step-card {
+    padding: 1.75rem 1.5rem;
   }
 
   .timeline-connector-line {
     width: 2px;
-    height: 24px;
+    height: 20px;
     margin: 0 auto;
   }
 
   .problems-toolbar {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.875rem;
+  }
+
+  .search-field-box {
+    width: 100%;
+    min-width: 0;
   }
 
   .filter-controls-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .filter-controls-group .select-wrapper {
-    flex: 1;
+    width: 100%;
   }
 
   .filter-select {
@@ -1176,50 +1232,104 @@
   .auth-lock-actions .btn {
     width: 100%;
     white-space: normal;
-    min-height: 52px;
+    min-height: 50px;
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 90px 0 40px;
+    padding: 85px 0 35px;
   }
 
   .hero-title {
-    font-size: 1.875rem;
+    font-size: 1.85rem;
   }
 
   .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-action-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-action-buttons .btn {
-    width: 100%;
-    white-space: normal;
-    min-height: 52px;
+    font-size: 0.975rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-metrics-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
   }
 
   .features-grid-cards {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .features-section,
+  .how-it-works-section,
+  .community-problems-section {
+    padding: 3.5rem 0;
+  }
+
+  .footer-site {
+    padding: 3.5rem 0 1.5rem;
   }
 
   .footer-main-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .footer-bottom-bar {
     flex-direction: column;
     text-align: center;
     gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+  }
+
+  .section-subheading {
+    font-size: 0.925rem;
+  }
+
+  .filter-controls-group {
+    grid-template-columns: 1fr;
+  }
+
+  .active-issues-cta-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.875rem;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-card-preview {
+    padding: 1rem;
+  }
+
+  .timeline-step-card {
+    padding: 1.5rem 1rem;
   }
 }

@@ -351,8 +351,14 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .report-problem-page {
+    padding-top: 88px;
+    padding-bottom: 3.5rem;
+  }
+
   .report-layout-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .report-sidebar {
@@ -361,16 +367,50 @@
 }
 
 @media (max-width: 640px) {
+  .report-problem-page {
+    padding-top: 80px;
+    padding-bottom: 2.5rem;
+  }
+
   .report-form-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.125rem;
+    border-radius: var(--radius-lg, 14px);
   }
 
   .report-title {
     font-size: 1.5rem;
   }
 
+  .report-subtitle {
+    font-size: 0.875rem;
+  }
+
   .form-row-two-col {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .dropzone-box {
+    padding: 1.75rem 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .report-form-card {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .report-title {
+    font-size: 1.35rem;
+  }
+
+  .image-preview-card {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .btn-remove-preview {
+    width: 100%;
+    justify-content: center;
   }
 }

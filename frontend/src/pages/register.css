@@ -107,4 +107,9 @@
     grid-template-columns: 1fr;
     gap: 0.625rem;
   }
+
+  .role-choice-card {
+    padding: 0.875rem 1rem;
+    min-height: 52px;
+  }
 }
